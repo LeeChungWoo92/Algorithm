@@ -2,10 +2,13 @@
 //  main.swift
 //  AlgorithmStudy
 //
-//  Created by rencar on 2021/08/03.
+//  Created by lcw on 2021/08/03.
 //
 
 import Foundation
 
-print("Hello, World!")
+var input = readLine()
 
+if let input = input {
+    print(input)
+}
