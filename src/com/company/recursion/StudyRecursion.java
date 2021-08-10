@@ -3,14 +3,15 @@ package com.company.recursion;
 
 import java.util.Scanner;
 
-public class Main {
+//백준 10872번 문제 팩토리얼
+public class StudyRecursion {
 
     public static void main(String[] args) {
 
         Scanner in = new Scanner(System.in);
 
         int N = in.nextInt();
-        in.close();;
+        in.close();
 
         //int sum = factorial(N); 재귀
         int sum = factorialLoop(N); //반복문
