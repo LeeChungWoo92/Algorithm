@@ -1,6 +1,5 @@
 package com.company.stack;
 
-public class Stack_10828 {
 /*
 유형: 스택
 문제: 10828 스택
@@ -53,32 +52,89 @@ top
 
 */
 
+import java.util.Scanner;
+
+public class Stack_10828 {
+
+    public static int[] stack;
+    public static int size = 0;
+
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder();
+        int X = in.nextInt();
+        stack = new int[X];
+
+        for (int i = 0; i < X; i++) {
+            String str = in.next();
+
+            switch (str) {
+                case "push":
+                    push(in.nextInt());
+                    break;
+
+                case "pop":
+                    sb.append(pop()).append('\n');
+                    break;
+
+                case "size":
+                    sb.append(size()).append('\n');
+                    break;
+
+                case "empty":
+                    sb.append(empty()).append('\n');
+                    break;
+
+                case "top":
+                    sb.append(top()).append('\n');
+                    break;
+            }
 
     }
+        System.out.println(sb);
+}
 
     //push X: 정수 X를 스택에 넣는 연산이다.
-    public static void push() {
+    public static void push(int item) {
+        stack[size] = item;
+        size++;
 
     }
 
     //스택에서 가장 위에 있는 정수를 빼고, 그 수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.
     public static int pop() {
-        return 1;
+        if (size == 0) {
+            return -1;
+        } else {
+            int stackTop = stack[size - 1];
+            stack[size - 1] = 0;
+            size--;
+            return stackTop;
+        }
     }
 
     //스택에 들어있는 정수의 개수를 출력한다.
     public static int size() {
-        return 1;
+        return size;
     }
 
     //스택이 비어있으면 1, 아니면 0을 출력한다.
     public static int empty() {
-        return 1;
+        if (size == 0) {
+            return 1;
+        } else {
+            return 0;
+
+        }
     }
 
     //스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.
     public static int top() {
-        return 1;
+        if (size == 0) {
+            return -1;
+        } else {
+
+            return stack[size - 1];
+        }
     }
 }
