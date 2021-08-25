@@ -1,5 +1,8 @@
 package com.company.stack;
 
+import java.util.Scanner;
+import java.util.Stack;
+
 /*
 유형: 스택
 문제: 10773
@@ -54,6 +57,54 @@ public class Stack_10773 {
 
     public static void main(String[] args){
 
+        Scanner in = new Scanner(System.in);
+        int K = in.nextInt();
+        Stack<Integer> st = new Stack<>();
+
+        for(int i = 0; i<K; i++){
+            int a = in.nextInt();
+
+            if(a!=0){
+                st.add(a);
+            }else if( a== 0){
+                st.pop();
+            }
+            System.out.println(st);
+        }
+
+        int answer = 0;
+
+        while (!st.isEmpty()){
+            answer += st.pop();
+        }
+        System.out.println(answer);
+
+       /*
+       기존에 혼자 해보다 실패한 방식
+       int[] arr = new int[K];
+        int result = 0;
+
+        for(int i = 0; i<K; i++){
+            int temp = in.nextInt();
+
+            if(temp ==0){
+                if(arr[i-1] ==0){
+
+                }else{
+                    arr[i-1] = 0;
+                }
+
+
+            }else{
+                arr[i] = temp;
+            }
+
+        }
+
+        for(int i =0; i<K; i++){
+            result += arr[i];
+        }
+        System.out.println(result);*/
 
     }
 }
